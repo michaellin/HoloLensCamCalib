@@ -8,9 +8,9 @@ np.set_printoptions(precision=4)
 np.set_printoptions(formatter={'float_kind': '{: 0.4f}'.format})
 
 # Read calibration parameters from readFileName
-readFileName = "hololens_ml_896x504.yaml"
+readFileName = "test.yaml"
 # Dump this parameters into .dat file which can be used by HoloLens ARToolkit
-outFileName = "hololens_ml_896x504.dat"
+outFileName = "test.dat"
 
 fileIn = open(readFileName, 'rb')
 fileOut = open(outFileName, 'wb')
@@ -20,7 +20,6 @@ yobj = yaml.load(fileIn)
 temp_mat = yobj['camera_matrix']
 [x.append(0) for x in temp_mat]
 cam_mat = np.array(temp_mat)
-print(cam_mat.reshape(-1).tolist())
 dc = yobj['dist_coeff'][0]
 
 xsize = yobj['width']
