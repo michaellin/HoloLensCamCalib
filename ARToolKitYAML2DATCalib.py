@@ -34,7 +34,7 @@ if (len(sys.argv) == 2):
   fy = cam_mat[1][1]
   x0 = cam_mat[0][2]
   y0 = cam_mat[1][2]
-  s = 0.9 # what is this last one? Does it matter?
+  s = 0.93 # what is this last one? Does it matter?
   try:
     fileOut.write(struct.pack(">2i", xsize, ysize))
     fileOut.write(struct.pack(">12d", *cam_mat.reshape(-1).tolist()))
